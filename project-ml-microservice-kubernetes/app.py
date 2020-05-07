@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from flask.logging import create_logger
+from flask.logging import create_logger 
 import logging
 
 import pandas as pd
@@ -9,6 +9,7 @@ from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 LOG = create_logger(app)
 LOG.setLevel(logging.INFO)
+
 
 def scale(payload):
     """Scales Payload"""
@@ -20,7 +21,8 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = f"<h3>Sklearn Prediction Home</h3>"
+    #html = f"<h3>Sklearn Prediction Home</h3>"
+    html = "<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
 @app.route("/predict", methods=['POST'])
@@ -52,7 +54,7 @@ def predict():
         { "prediction": [ <val> ] }
         
         """
-    
+    LOG.info(f"Prediction Values") 
     # Logging the input payload
     json_payload = request.json
     LOG.info(f"JSON payload: \n{json_payload}")
