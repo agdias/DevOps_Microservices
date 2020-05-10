@@ -54,7 +54,7 @@ def predict():
         { "prediction": [ <val> ] }
         
         """
-    LOG.info(f"Prediction Values") 
+    LOG.info("Prediction Values") 
     # Logging the input payload
     json_payload = request.json
     LOG.info(f"JSON payload: \n{json_payload}")
