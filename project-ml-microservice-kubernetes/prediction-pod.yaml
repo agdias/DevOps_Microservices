@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: prediction
+  labels:
+    app: prediction
+spec:
+  containers:
+  - image: angelodias/predict
+    name: prediction
+    ports:
+    - containerPort: 80
+      protocol: TCP
+
