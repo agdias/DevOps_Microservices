@@ -20,7 +20,7 @@ metadata:
     app: prediction
 spec:
   containers:
-  - image: angelodias/predict
+  - image: ${dockerpath}
     name: prediction
     ports:
     - containerPort: 80
